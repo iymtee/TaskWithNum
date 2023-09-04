@@ -20,19 +20,22 @@ namespace TaskWithNum
             {
                 if (int.TryParse(numStr.Trim(), out int num))
                 {
-                    string strOut = "";
+
+                    List<string> lstOut = new List<string>();
 
                     if (num % 3 == 0)
-                        strOut += "fizz";
+                        lstOut.Add("fizz");
                     if (num % 5 == 0)
-                        strOut += "buzz";
-                    if (num % 3 == 0 && num % 5 == 0)
-                        strOut = "fizz-buzz";
+                        lstOut.Add("buzz");
+                    if (num % 7 == 0)
+                        lstOut.Add("guzz");
+                    if (num % 4 == 0)
+                        lstOut.Add("muzz");
 
-                    if (string.IsNullOrEmpty(strOut))
-                        strOut = numStr.ToString();
+                    if (lstOut.Count == 0)
+                        lstOut.Add(numStr.ToString());
 
-                    lstResult.Add(strOut);
+                    lstResult.Add(string.Join("-", lstOut));
                 }
                 else
                 {

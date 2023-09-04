@@ -23,10 +23,15 @@ namespace TaskWithNum
 
                     List<string> lstOut = new List<string>();
 
-                    if (num % 3 == 0)
-                        lstOut.Add("fizz");
-                    if (num % 5 == 0)
-                        lstOut.Add("buzz");
+                    if (num % 3 == 0 && num % 5 == 0)
+                        lstOut.Add("good-boy");
+                    else
+                    {
+                        if (num % 3 == 0)
+                            lstOut.Add("dog");
+                        if (num % 5 == 0)
+                            lstOut.Add("cat");
+                    }
                     if (num % 7 == 0)
                         lstOut.Add("guzz");
                     if (num % 4 == 0)
